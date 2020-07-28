@@ -80,12 +80,36 @@ RAKE SPEC
 
 # Provisioning with bash scripts
 ## launch node app
-###running tests
+### running tests
 - top command```top```
-
 ```ps``` command give ProgramID
 - ```chmod +x file_name.sh```
 - ```cat filename``` - computer aided translation - used in software to print the file without nano 
 
 ### Exercise to find the linux codes to assign permission 
 [Link](https://www.guru99.com/file-permissions.html)
+
+##syncing folder
+```
+nano vagrant file
+```
+Then edit the:
+```
+config.vm.synced_folder "app", "/home/vagrant/app"
+
+change it to 
+
+config.vm.synced_folder ".", "/home/vagrant/app"
+
+```
+
+## Update, install nginx and upgrade
+```
+#!/bin/bash
+
+sudo apt-get update
+sudo apt-get install nginx
+sudo apt-get upgrade
+
+
+```
