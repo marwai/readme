@@ -85,6 +85,7 @@ RAKE SPEC
 
 ```ps``` command give ProgramID
 - ```chmod +x file_name.sh```
-- 
+- ```cat filename``` - computer aided translation - used in software to print the file without nano 
 
 ### Exercise to find the linux codes to assign permission 
+[Link](https://www.guru99.com/file-permissions.html)
