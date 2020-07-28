@@ -113,3 +113,79 @@ sudo apt-get upgrade
 
 
 ```
+## testing dependencies
+We run a command to test our VM's dependencies:
+
+
+rake spec - NOTE: This command is running in the directory of Spec-tests (Outside of the VM machine)
+
+We run a command to install python properties within our VM machine:
+
+
+sudo apt-get install python-software-properties
+
+These are the steps we took to install Node:
+
+
+
+curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+
+sudo apt-get install -y nodejs
+
+
+
+Running an update to make sure all the dependencies and packages are up to date:
+
+
+sudo apt-get update
+
+Running PM2 package through NPM:
+
+
+sudo npm install pm2 -g
+
+
+Running an update again:
+
+
+sudo apt-get update
+
+
+## next 
+
+Once we got this working, loading the app directory within the VM and then running another command:
+
+npm install
+
+
+Running an update again:
+
+
+sudo apt-get update
+
+
+Testing to make sure the app is running:
+
+
+node app.js
+
+## exercise multi-machine lab
+
+The sample application has the ability to connect to a database. We need to provision our development environment with a vm for the database and one for the database.
+
+Vagrant is capable of running two or more virtual machines at once with different configurations.
+
+Tasks:
+- Research how to create a multi machine vagrant environment
+- Add a second virtual machine called "db" to your Vagrant file
+- Configure the db machine with a different IP from the app
+- Provision the db machine with a MongoDB database
+
+Notes
+When you have the second machine running further configuration of the app is required to make it use the database. We will cover this in the next lesson.
+
+You can test your database is working correctly by running the test suite in the test folder. There are two sets of tests. One for the app VM and one for the db VM. Make them all pass.
+
+cd test
+rake spec
+- starter-code sent to all trainees
